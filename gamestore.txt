@@ -1,0 +1,112 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE customer(
+id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+first_name TEXT NOT NULL,
+second_name TEXT NOT NULL,
+street TEXT NOT NULL,
+street_nr TEXT NOT NULL,
+zip INTEGER NOT NULL,
+city TEXT NOT NULL,
+tel TEXT NOT NULL,
+email TEXT NOT NULL
+);
+
+CREATE TABLE payment_method(
+id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+name TEXT NOT NULL
+);
+INSERT INTO payment_method VALUES(1,'Bargeld');
+INSERT INTO payment_method VALUES(2,'Kreditkarte');
+INSERT INTO payment_method VALUES(3,'TWINT');
+CREATE TABLE orders(
+id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+id_customer references customer(id),
+id_payment_method references payment_method(id),
+total_price DOUBLE NOT NULL
+);
+INSERT INTO orders VALUES(1,1,1,72.5);
+INSERT INTO orders VALUES(2,2,2,65.749999999999999998);
+INSERT INTO orders VALUES(3,3,3,55.549999999999997157);
+CREATE TABLE publisher(
+id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+name TEXT NOT NULL
+);
+INSERT INTO publisher VALUES(1,'Paradox Interactive AB');
+INSERT INTO publisher VALUES(2,'Electronic Arts');
+INSERT INTO publisher VALUES(3,'Mojang Studios');
+CREATE TABLE developer(
+id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+name TEXT NOT NULL
+);
+INSERT INTO developer VALUES(1,'Paradox Interactive AB');
+INSERT INTO developer VALUES(2,'Electronic Arts');
+INSERT INTO developer VALUES(3,'Mojang Studios');
+CREATE TABLE game(
+id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+id_publisher references publisher(id),
+id_developer references developer(id),
+name TEXT NOT NULL,
+stock INTEGER NOT NULL,
+price DOUBLE NOT NULL,
+pegi INTEGER NOT NULL
+);
+INSERT INTO game VALUES(1,1,1,'HEARTS OF IRON IV',15,72.5,7);
+INSERT INTO game VALUES(2,2,2,'FIFA 23',12,65.749999999999999998,3);
+INSERT INTO game VALUES(3,3,3,'MINECRAFT',10,55.549999999999997157,7);
+CREATE TABLE game_orders(
+id_game references game(id),
+id_orders references orders(id),
+quantity INTEGER NOT NULL
+);
+INSERT INTO game_orders VALUES(1,1,1);
+INSERT INTO game_orders VALUES(2,2,1);
+INSERT INTO game_orders VALUES(3,3,1);
+CREATE TABLE genre(
+id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+name TEXT NOT NULL
+);
+INSERT INTO genre VALUES(1,'Strategiespiel');
+INSERT INTO genre VALUES(2,'Fussballsimulation');
+INSERT INTO genre VALUES(3,'Survival');
+CREATE TABLE game_genre(
+id_game references game(id),
+id_genre references genre(id)
+);
+INSERT INTO game_genre VALUES(1,1);
+INSERT INTO game_genre VALUES(2,2);
+INSERT INTO game_genre VALUES(3,3);
+CREATE TABLE dlc(
+id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+id_game references game(id),
+name TEXT NOT NULL,
+price DOUBLE NOT NULL
+);
+INSERT INTO dlc VALUES(1,1,'HEARTS OF IRON IV dlc',0.0);
+INSERT INTO dlc VALUES(2,2,'FIFA 23 dlc',0.0);
+INSERT INTO dlc VALUES(3,3,'MINECRAFT dlc',0.0);
+CREATE TABLE dlc_genre(
+id_dlc references dlc(id),
+id_genre references genre(id)
+);
+INSERT INTO dlc_genre VALUES(1,1);
+INSERT INTO dlc_genre VALUES(2,2);
+INSERT INTO dlc_genre VALUES(3,3);
+CREATE TABLE dlc_orders(
+id_dlc references dlc(id),
+id_orders references orders(id),
+quantity INTEGER NOT NULL
+);
+INSERT INTO dlc_orders VALUES(1,1,15);
+INSERT INTO dlc_orders VALUES(2,2,12);
+INSERT INTO dlc_orders VALUES(3,3,10);
+DELETE FROM sqlite_sequence;
+INSERT INTO sqlite_sequence VALUES('customer',3);
+INSERT INTO sqlite_sequence VALUES('payment_method',3);
+INSERT INTO sqlite_sequence VALUES('orders',3);
+INSERT INTO sqlite_sequence VALUES('publisher',3);
+INSERT INTO sqlite_sequence VALUES('developer',3);
+INSERT INTO sqlite_sequence VALUES('game',3);
+INSERT INTO sqlite_sequence VALUES('genre',3);
+INSERT INTO sqlite_sequence VALUES('dlc',3);
+COMMIT;
