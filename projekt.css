@@ -1,0 +1,74 @@
+/* Stilregeln für den gesamten Inhalt des Dokuments */
+body {
+    font-family: Arial, sans-serif;  /*Verwendung der Schriftart Arial oder einer serifenlosen Standardschriftart */
+  }
+
+  /* Stilregeln für Überschriften vom Typ h1 */
+  h1 {
+    text-align: center; /* Zentrierte Ausrichtung des Textes */
+  }
+
+  /* Stilregeln für Textfelder vom Typ "text", Textareas und Datumsfelder */
+  input[type="text"],
+  textarea,
+  input[type="date"] {
+    width: 100%; /* Breite auf 100% setzen */
+    padding: 8px; /* Innenabstand von 8 Pixeln */
+    border: 1px solid #ccc; /* 1 Pixel breiter Rahmen mit der Farbe #ccc */
+    border-radius: 4px; /* Runde Ecken mit einem Radius von 4 Pixeln */
+  }
+
+  /* Stilregeln für Checkboxen */
+  input[type="checkbox"] {
+    margin-right: 6px; /* Rechter Außenabstand von 6 Pixeln */
+  }
+
+  /* Stilregeln für Buttons mit den IDs "createButton", "searchButton" und "reloadButton" */
+  #createButton,
+  #searchButton,
+  #reloadButton {
+    padding: 8px 16px; /* Innenabstand von 8 Pixeln oben/unten und 16 Pixeln links/rechts */
+    background-color: #4CAF50; /* Hintergrundfarbe #4CAF50 (dunkles Grün) */
+    color: #fff; /* Textfarbe auf Weiß */
+    border: none; /* Kein Rahmen */
+    border-radius: 4px;  /* Runde Ecken mit einem Radius von 4 Pixeln */
+    cursor: pointer; /* Mauszeiger ändert sich bei Hover-Effekt zu einem Zeigefinger */
+  }
+
+  /* Hover-Effekt für Buttons mit den IDs "createButton", "searchButton" und "reloadButton" */
+  #createButton:hover,
+  #searchButton:hover,
+  #reloadButton:hover {
+    background-color: #45a049; /* Hintergrundfarbe bei Hover-Effekt auf #45a049 (dunkles Grün) ändern */
+  }
+
+  /* Stilregeln für die TODO-Liste mit der ID "todoList" */
+  #todoList {
+    list-style: none; /* Keine Aufzählungspunkte */
+    padding: 0; /* Kein Innenabstand */
+  }
+
+  /* Stilregeln für die einzelnen Einträge der TODO-Liste */
+  li {
+    margin-bottom: 16px; /* Unten ein Außenabstand von 16 Pixeln */
+    padding: 8px; /* Innenabstand von 8 Pixeln */
+    border: 1px solid #ccc; /* 1 Pixel breiter Rahmen mit der Farbe #ccc */
+    border-radius: 4px; /* Runde Ecken mit einem Radius von 4 Pixeln */
+    background-color: #f9f9f9; /* Hintergrundfarbe #f9f9f9 (hellgrau) */
+  }
+
+  /* Stilregeln für die Überschrift der einzelnen Einträge der TODO-Liste */
+  button {
+    margin-right: 8px; /* Rechter Außenabstand von 8 Pixeln */
+    padding: 6px 12px; /* Innenabstand von 6 Pixeln oben/unten und 12 Pixeln links/rechts */
+    background-color: #ddd; /* Hintergrundfarbe #ddd (hellgrau) */
+    color: #000; /* Textfarbe auf Schwarz */
+    border: none; /* Kein Rahmen */
+    border-radius: 4px; /* Runde Ecken mit einem Radius von 4 Pixeln */
+    cursor: pointer; /* Mauszeiger ändert sich bei Hover-Effekt zu einem Zeigefinger */
+  }
+
+  /* Hover-Effekt für Buttons */
+  button:hover {
+    background-color: #ccc; /* Hintergrundfarbe bei Hover-Effekt auf #ccc (grau) ändern */
+  }

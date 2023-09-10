@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <title>TODO App</title>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="projekt.css">
+
+</head>
+<body>
+  <h1>TODO App</h1>
+
+  <!-- Eingabefelder für die Erstellung/Änderung eines neuen TODOs -->
+   <!-- Eingabefeld für den Titel -->
+  <input id="titleInput" type="text" placeholder="Titel" required>
+  <br><br>
+   <!-- Textfeld für die Beschreibung -->
+  <textarea id="descriptionInput" placeholder="Beschreibung" required></textarea>
+  <br><br>
+  <!-- Eingabefeld für das Kürzel -->
+  <input id="abbreviationInput" type="text" placeholder="Kürzel" required>
+  <br><br>
+  <!-- Checkbox für die Wichtigkeit -->
+  <label><input id="importantInput" type="checkbox">Wichtig</label>
+  <br><br>
+  <!-- Checkbox für die Dringlichkeit -->
+  <label><input id="urgentInput" type="checkbox">Dringend</label>
+  <br><br>
+  <!-- Eingabefeld für das Fälligkeitsdatum -->
+  <input id="dueDateInput" type="date" required>
+  <br><br>
+  <!-- Eingabefeld für den Fortschritt in Prozent -->
+  <input id="percentageInput" type="number" placeholder="Fortschritt in %" min="0" max="100" required>
+  <br><br>
+  <!-- Button zum Erstellen eines neuen TODOs -->
+  <button id="createButton">TODO erstellen</button>
+  <br><br>
+  <br><br>
+
+  <!-- Suchfeld -->
+  <input id="searchInput" type="text" placeholder="Suche nach TODOs">
+  <br><br>
+  <!-- Button zum Starten der Suche -->
+  <button id="searchButton">Suchen</button>
+  <br><br>
+  <!-- Button zum Neuladen der Seite -->
+  <button id="reloadButton">Seite neu laden</button>
+  <br><br>
+
+  <!-- TODO-Liste -->
+  <ul id="todoList"></ul>
+  <!-- Einbindung der JavaScript-Datei -->
+  <script src ="projekt.js"></script>
+  <script>
+    // Event-Listener für den Klick auf den "Seite neu laden"-Button
+    document.getElementById('reloadButton').addEventListener('click', function() {
+      location.reload(); // Die Seite wird neu geladen
+    });
+  </script>
+
+</body>
+</html>
