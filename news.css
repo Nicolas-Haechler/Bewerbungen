@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif; /* Die verwendete Schriftart für den Text im Body */
+    margin: 20px; /* Abstand zwischen dem Rand des Browserfensters und dem Body */
+  }
+  
+  h1 {
+    color: white; /* Textfarbe */
+    background-color: blue; /* Hintergrundfarbe */
+    height: 100px; /* Höhe des Elements */
+    text-align: center; /* Zentrierung des Textes */
+  }
+  
+  form {
+    margin-bottom: 20px; /* Unterer Abstand zwischen Formular und dem nächsten Element */
+  }
+  
+  label {
+    display: block; /* Das Label wird als Blockelement dargestellt */
+    margin-bottom: 10px; /* Unterer Abstand zwischen Formular und dem nächsten Element */
+  }
+  
+  input[type="text"], 
+  textarea,
+  input[type="date"] {
+    width: 100%; /* Die Breite des Elements */
+    padding: 5px; /* Der innere Abstand zwischen dem Inhalt und dem Rand des Elements */
+    margin-bottom: 10px; /* Unterer Abstand zwischen Formular und dem nächsten Element */
+  }
+  
+  textarea {
+    resize: vertical; /* Die Größe des Textfeldes kann nur in vertikaler Richtung verändert werden */
+  }
+  
+  input[type="submit"],
+  input[type="reset"] {
+    padding: 10px 20px; /* Innenabstand der Submit- und Reset-Buttons */
+    background-color: blue; /* Hintergrundfarbe der Buttons */
+    color: white; /* Textfarbe der Buttons */
+    border: none; /* Kein Rahmen um die Buttons */
+    cursor: pointer; /* Der Mauszeiger wird zu einer Hand */
+  }
+  
+  input[type="submit"]:hover,
+  input[type="reset"]:hover {
+    background-color: blue; /* Hintergrundfarbe der Submit- und Reset-Buttons beim Überfahren mit der Maus */
+  }
+
+  ul {
+    list-style-type: none; /* Entfernt die Aufzählungszeichen */
+    margin: 0; /* Entfernt den Abstand zwischen dem Listen-Element und dem nächsten Element */
+    padding: 0; /* Entfernt den Abstand zwischen dem Listen-Element und dem Inhalt */
+    overflow: hidden; /* Verhindert, dass die Liste über den Rand des Elements hinausragt */
+    background-color: black; /* Hintergrundfarbe der Liste */
+  }
+  
+  li {
+    float: left; /* Die Liste wird nebeneinander dargestellt */
+  }
+  
+  li a {
+    display: block; /* Die Links werden als Blockelemente dargestellt */
+    color: white; /* Textfarbe der Links */
+    text-align: center; /* Zentrierung des Textes */
+    padding: 14px 16px; /* Innenabstand der Links */
+    text-decoration: none; /* Entfernt die Unterstreichung der Links */
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111; /* Hintergrundfarbe der Anker-Elemente beim Überfahren mit der Maus */
+  }
+  
+  .active {
+    background-color: lightblue; /* Hintergrundfarbe des aktiven Anker-Elements */
+  }
+
+  .news-container {
+    display: grid; /* Die Elemente werden in einem Raster dargestellt */
+    grid-template-columns: repeat(2, 1fr); /* Die Anzahl der Spalten und deren Breite */
+    gap: 20px; /* Der Abstand zwischen den Elementen */
+}
+
+.news-item {
+    border: 1px solid black; /* Ein schwarzer Rahmen um die Elemente */
+    padding: 10px; /* Der innere Abstand zwischen dem Inhalt und dem Rand des Elements */
+}
+
+
+  
